@@ -1,0 +1,23 @@
+---
+title: "hw_01.Rmd"
+author: "Suliat Alli"
+date: "9/23/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+## Introduction
+
+I am **Suliat Alli**, a fourth year PhD. candidate at the Department of Chemistry, LSU. My research is focused on evaluating and improving small molecules that can serve as antibiotics against *Pseudomonas aeruginosa*, a gram-negative bacteria. I use various techniques such as spectroscopy and computational tools to study the interaction between these probable drug molecules and their target in the bacteria. 
+
+##### Git Version
+``` {r} 
+print(system("git --version"))
+```
+
+#### R version
+``` {r}
+print (system("r --version"))
+```
+
+
