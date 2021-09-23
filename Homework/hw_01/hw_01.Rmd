@@ -10,8 +10,10 @@ output:
 
 I am **Suliat Alli**, a fourth year PhD. candidate at the Department of Chemistry, LSU. My research is focused on evaluating and improving small molecules that can serve as antibiotics against *Pseudomonas aeruginosa*, a gram-negative bacteria. I use various techniques such as spectroscopy and computational tools to study the interaction between these probable drug molecules and their target in the bacteria. 
 
-### Mantra
+
+#### Mantra
 *Never doubt that you are valuable, powerful and deserving of every chance and opportunity in the world* - **Hillary Clinton**
+
 
 ##### Git Version
 ``` {r} 
