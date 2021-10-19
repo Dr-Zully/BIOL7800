@@ -1,0 +1,62 @@
+---
+()title: "Homework_3"
+author: "Suliat Alli"
+date: "10/13/2021"
+output: html_document
+---
+### Homework3
+
+#### Question1
+```{r}
+set.seed(12) # to be reproducible
+A = matrix(data = runif(n = 1:500), nrow = 50, ncol = 10)
+colnames(A) = paste("lake", 1:10, sep = "_")
+```
+
+```{r}
+
+y <- NULL  
+for (i in c(1:10)){
+  avg = mean(A[, i])
+  y = c(y, avg)
+}
+names(y) <- names(A)
+y
+```
+
+```{r}
+colMeans(A)
+```
+
+#### Question 2
+```{r}
+x = array(1:27, dim = c(3, 3, 3))
+apply(X = x, MARGIN = c(1, 2), 
+      FUN = paste, collapse = ", ")
+
+?apply
+```
+
+
+#### Question 3
+```{r}
+n <- 30
+f <- numeric(n)
+f[1] <- 0
+f[2] <- 1
+for (i in 3:n){
+  f[i] = f[i-1] + f[i-2]
+}
+print(f)
+```
+
+
+#### Question 4
+```{r}
+top105 = readLines("http://www.textfiles.com/music/ktop100.txt")
+top105 = top105[-c(64, 65)] # missing No. 54 and 55
+top105_1 <- top105[11:117]
+
+numbers <- lapply(top105_1, function(x) x[grepl('numeric', x)])
+print(numbers)
+```
