@@ -1,0 +1,54 @@
+---
+title: "Untitled"
+author: "Suliat Alli"
+date: "10/26/2021"
+output: html_document
+---
+### Homework 4
+
+#### Question 1
+```{r, results="hold", warning=FALSE, message=FALSE}
+# install.packages("rvest")
+?rvest
+library(rvest)
+library(tidyr)
+library(dplyr)
+www <- read_html('https://introdatasci.dlilab.com/schedule_materials/')
+
+content <- www %>%
+  html_table(fill = T)
+table <- content[[1]]
+table
+```
+
+#### Question 2
+```{r, results="hold", warning=FALSE, message=FALSE}
+table <- table %>%
+  separate(Date, c("Month", "Day"))
+table
+```
+
+
+#### Question 3
+```{r, results="hold", warning=FALSE, message=FALSE}
+table %>%
+  group_by(Month) %>%
+  summarise(num_lecture = n()) %>%
+  arrange(desc(num_lecture))
+```
+
+#### Question 4
+
+```{r, results="hold", warning=FALSE, message=FALSE}
+library(stringr)
+
+word_list <- strsplit(table$Topic, " ")
+words <- unlist(word_list)
+words <- table(words)
+
+freq_words <- words %>%
+  as.data.frame() %>%
+  arrange(desc(Freq))
+
+top_n(freq_words, 5)
+```
